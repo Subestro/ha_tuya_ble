@@ -114,9 +114,9 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
                 ["isljqiq1"], # Smart Lock
                 [
                     TuyaBLEButtonMapping(
-                        dp_id=6,
+                        dp_id=62,
                         description=ButtonEntityDescription(
-                            key="unlock_ble",
+                            key="unlock_phone_remote",
                         ),
                     ),
                     #TuyaBLEButtonMapping(
