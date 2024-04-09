@@ -149,7 +149,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
     "ms": TuyaBLECategorySensorMapping(
         products={
             **dict.fromkeys(
-                ["ludzroix", "isk2p555", "isljqiq1"], # Smart Lock
+                ["ludzroix", "isk2p555"], # Smart Lock
                 [
                     TuyaBLESensorMapping(
                         dp_id=21,
@@ -166,6 +166,51 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                     TuyaBLEBatteryMapping(dp_id=8),
                 ],
             ),
+        }
+    ),
+    "jtmspro": TuyaBLECategorySensorMapping(
+        products={
+            "kholoaew":  # Nice Digi X1
+            [
+                TuyaBLESensorMapping(
+                    dp_id=21, # Requires more testing
+                    description=SensorEntityDescription(
+                        key="alarm_lock",
+                        icon="mdi:alarm-light-outline",
+                        device_class=SensorDeviceClass.ENUM,
+                        options=[
+                            "wrong_finger",
+                            "wrong_password",
+                            "wrong_card",
+                            "pry",
+                            "low_battery",
+                            "power_off",
+                        ],
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=12, # Retrieve last fingerprint used
+                    description=SensorEntityDescription(
+                        key="unlock_fingerprint",
+                        icon="mdi:fingerprint",
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=15, # Retrieve last card used
+                    description=SensorEntityDescription(
+                        key="unlock_card",
+                        icon="mdi:nfc-variant",
+                    ),
+                ),
+                TuyaBLESensorMapping(
+                    dp_id=13, # Retrieve last code used
+                    description=SensorEntityDescription(
+                        key="unlock_password",
+                        icon="mdi:keyboard-outline",
+                    ),
+                ),
+                TuyaBLEBatteryMapping(dp_id=8),
+            ],
         }
     ),
     "szjqr": TuyaBLECategorySensorMapping(
@@ -198,7 +243,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                 [
                     "blliqpsj",
                     "ndvkgsrm",
-                    "yiihr7zh",
+                    "yiihr7zh", 
                     "neq16kgd"
                 ],  # Fingerbot Plus
                 [
@@ -255,22 +300,6 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         "mdi:battery-50",
                         "mdi:battery-check",
                     ],
-                ),
-                TuyaBLEBatteryMapping(dp_id=4),
-            ],
-            "iv7hudlj": [  # Bluetooth Temperature Humidity Sensor
-                TuyaBLETemperatureMapping(
-                    dp_id=1,
-                    coefficient=10.0,
-                ),
-                TuyaBLESensorMapping(
-                    dp_id=2,
-                    description=SensorEntityDescription(
-                        key="moisture",
-                        device_class=SensorDeviceClass.MOISTURE,
-                        native_unit_of_measurement=PERCENTAGE,
-                        state_class=SensorStateClass.MEASUREMENT,
-                    ),
                 ),
                 TuyaBLEBatteryMapping(dp_id=4),
             ],
