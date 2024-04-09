@@ -86,7 +86,7 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
     "ms": TuyaBLECategorySelectMapping(
         products={
             **dict.fromkeys(
-                ["ludzroix", "isk2p555", "isljqiq1"], # Smart Lock
+                ["ludzroix", "isk2p555"], # Smart Lock
                 [
                     TuyaBLESelectMapping(
                         dp_id=31,
