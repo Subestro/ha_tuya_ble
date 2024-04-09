@@ -51,7 +51,7 @@ class TuyaBLEFingerbotModeMapping(TuyaBLESelectMapping):
             entity_category=EntityCategory.CONFIG,
             options=
                 [
-                    FINGERBOT_MODE_PUSH,
+                    FINGERBOT_MODE_PUSH, 
                     FINGERBOT_MODE_SWITCH,
                     FINGERBOT_MODE_PROGRAM,
                 ],
@@ -66,24 +66,73 @@ class TuyaBLECategorySelectMapping:
 
 
 mapping: dict[str, TuyaBLECategorySelectMapping] = {
+    "co2bj": TuyaBLECategorySelectMapping(
+        products={
+            "59s19z5m":  # CO2 Detector
+            [
+                TuyaBLESelectMapping(
+                    dp_id=101,
+                    description=TemperatureUnitDescription(
+                        options=[
+                            UnitOfTemperature.CELSIUS,
+                            UnitOfTemperature.FAHRENHEIT,
+                        ],
+                    )
+                ),
+            ],
+        },
+    ),
     "ms": TuyaBLECategorySelectMapping(
         products={
-            "isljqiq1":  # Your smart lock product ID
-            [
-                # Add TuyaBLESelectMapping for remote unlock
+            **dict.fromkeys(
+                ["ludzroix", "isk2p555"], # Smart Lock
+                [
                     TuyaBLESelectMapping(
-                        dp_id=62,
+                        dp_id=31,
                         description=SelectEntityDescription(
-                            key="remote_unlock",
+                            key="beep_volume",
                             options=[
-                                "Disable",
-                                "Enable",
+                                "mute",
+                                "low",
+                                "normal",
+                                "high",
                             ],
                             entity_category=EntityCategory.CONFIG,
                         ),
                     ),
                 ]
             ),
+        }
+    ),
+    "jtmspro": TuyaBLECategorySelectMapping(
+        products={
+            "kholoaew":  # Nice Digi X1
+            [
+                TuyaBLESelectMapping(
+                    dp_id=31,
+                    description=SelectEntityDescription(
+                        key="beep_volume",
+                        options=[
+                            "Mute",
+                            "Low",
+                            "Normal",
+                            "High",
+                        ],
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+                TuyaBLESelectMapping(
+                    dp_id=28,
+                    description=SelectEntityDescription(
+                        key="language",
+                        options=[
+                            "Chinese Simplified",
+                            "English",
+                        ],
+                        entity_category=EntityCategory.CONFIG,
+                    ),
+                ),
+            ],
         }
     ),
     "szjqr": TuyaBLECategorySelectMapping(
@@ -98,7 +147,7 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
                 [
                     "blliqpsj",
                     "ndvkgsrm",
-                    "yiihr7zh",
+                    "yiihr7zh", 
                     "neq16kgd"
                 ],  # Fingerbot Plus
                 [
@@ -118,19 +167,6 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
     "wsdcg": TuyaBLECategorySelectMapping(
         products={
             "ojzlzzsw":  # Soil moisture sensor
-            [
-                TuyaBLESelectMapping(
-                    dp_id=9,
-                    description=TemperatureUnitDescription(
-                        options=[
-                            UnitOfTemperature.CELSIUS,
-                            UnitOfTemperature.FAHRENHEIT,
-                        ],
-                        entity_registry_enabled_default=False,
-                    )
-                ),
-            ],
-            "iv7hudlj":  # Bluetooth Temperature Humidity Sensor
             [
                 TuyaBLESelectMapping(
                     dp_id=9,
