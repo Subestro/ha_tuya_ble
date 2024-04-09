@@ -164,7 +164,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             ],
                         ),
                     ),
-                    TuyaBLEBatteryMapping(dp_id=8),
+                    TuyaBLEBatteryMapping(dp_id=9),
                 ],
             ),
         }
