@@ -148,8 +148,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
     ),
     "ms": TuyaBLECategorySensorMapping(
         products={
-            "isljqiq1":  # Smart Lock
-            [
+            "isljqiq1": [  # CO2 Detector
                 TuyaBLESensorMapping(
                     dp_id=21, # Requires more testing
                     description=SensorEntityDescription(
@@ -161,7 +160,6 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             "wrong_password",
                             "wrong_card",
                             "low_battery",
-#                            "power_off",
                         ],
                     ),
                 ),
@@ -189,59 +187,6 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                 TuyaBLEBatteryMapping(dp_id=9),
             ],
         }
-    ),
-    "szjqr": TuyaBLECategorySensorMapping(
-        products={
-            **dict.fromkeys(
-                ["3yqdo5yt", "xhf790if"],  # CubeTouch 1s and II
-                [
-                    TuyaBLESensorMapping(
-                        dp_id=7,
-                        description=SensorEntityDescription(
-                            key="battery_charging",
-                            device_class=SensorDeviceClass.ENUM,
-                            entity_category=EntityCategory.DIAGNOSTIC,
-                            options=[
-                                BATTERY_NOT_CHARGING,
-                                BATTERY_CHARGING,
-                                BATTERY_CHARGED,
-                            ],
-                        ),
-                        icons=[
-                            "mdi:battery",
-                            "mdi:power-plug-battery",
-                            "mdi:battery-check",
-                        ],
-                    ),
-                    TuyaBLEBatteryMapping(dp_id=8),
-                ],
-            ),
-            **dict.fromkeys(
-                [
-                    "blliqpsj",
-                    "ndvkgsrm",
-                    "yiihr7zh", 
-                    "neq16kgd"
-                ],  # Fingerbot Plus
-                [
-                    TuyaBLEBatteryMapping(dp_id=12),
-                ],
-            ),
-            **dict.fromkeys(
-                [
-                    "ltak7e1p",
-                    "y6kttvd6",
-                    "yrnk7mnn",
-                    "nvr2rocq",
-                    "bnt7wajf",
-                    "rvdceqjh",
-                    "5xhbk964",
-                ],  # Fingerbot
-                [
-                    TuyaBLEBatteryMapping(dp_id=12),
-                ],
-            ),
-        },
     ),
     "wsdcg": TuyaBLECategorySensorMapping(
         products={
