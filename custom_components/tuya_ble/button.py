@@ -108,7 +108,6 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
             ],
         },
     ),
-}
     "ms": TuyaBLECategoryButtonMapping(
         products={
             "isljqiq1":  # Your smart lock product ID
@@ -124,7 +123,7 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
             ],
         },
     ),
-    ...
+    # Add other category entries if needed...
 }
 
 def get_mapping_by_device(device: TuyaBLEDevice) -> list[TuyaBLECategoryButtonMapping]:
