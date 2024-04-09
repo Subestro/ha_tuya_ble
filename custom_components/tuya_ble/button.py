@@ -60,9 +60,45 @@ class TuyaBLECategoryButtonMapping:
 
 
 mapping: dict[str, TuyaBLECategoryButtonMapping] = {
+    "szjqr": TuyaBLECategoryButtonMapping(
+        products={
+            **dict.fromkeys(
+                ["3yqdo5yt", "xhf790if"],  # CubeTouch 1s and II
+                [
+                    TuyaBLEFingerbotModeMapping(dp_id=1),
+                ],
+            ),
+            **dict.fromkeys(
+                [
+                    "blliqpsj",
+                    "ndvkgsrm",
+                    "yiihr7zh", 
+                    "neq16kgd"
+                ],  # Fingerbot Plus
+                [
+                    TuyaBLEFingerbotModeMapping(dp_id=2),
+                ],
+            ),
+            **dict.fromkeys(
+                [
+                    "ltak7e1p",
+                    "y6kttvd6",
+                    "yrnk7mnn",
+                    "nvr2rocq",
+                    "bnt7wajf",
+                    "rvdceqjh",
+                    "5xhbk964",
+                ],  # Fingerbot
+                [
+                    TuyaBLEFingerbotModeMapping(dp_id=2),
+                ],
+            ),
+        },
+    ),
     "znhsb": TuyaBLECategoryButtonMapping(
         products={
-            "cdlandip": [  # Smart water bottle
+            "cdlandip":  # Smart water bottle
+            [
                 TuyaBLEButtonMapping(
                     dp_id=109,
                     description=ButtonEntityDescription(
@@ -72,21 +108,22 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
             ],
         },
     ),
-    "ms": TuyaBLECategoryButtonMapping(
+    "jtmspro": TuyaBLECategoryButtonMapping(
         products={
-            "isljqiq1": [  # Your smart lock product ID
+            "kholoaew":  # Nice Digi X1
+            [
                 TuyaBLEButtonMapping(
-                    dp_id=62,  # Remote unlock data point
+                    dp_id=71, # On click it opens the lock, just like connecting via Smart Life App and holding the center button
                     description=ButtonEntityDescription(
-                        key="remote_unlock",
+                        key="ble_unlock_check",
                         icon="mdi:lock-open-variant-outline",
-                        # Add any additional details as needed
                     ),
                 ),
             ],
         },
     ),
 }
+
 
 def get_mapping_by_device(device: TuyaBLEDevice) -> list[TuyaBLECategoryButtonMapping]:
     category = mapping.get(device.category)
