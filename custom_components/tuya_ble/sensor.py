@@ -169,9 +169,9 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
             ),
         }
     ),
-    "jtmspro": TuyaBLECategorySensorMapping(
+    "ms": TuyaBLECategorySensorMapping(
         products={
-            "kholoaew":  # Nice Digi X1
+            "isljqiq1":  # Smart Lock
             [
                 TuyaBLESensorMapping(
                     dp_id=21, # Requires more testing
@@ -183,9 +183,8 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                             "wrong_finger",
                             "wrong_password",
                             "wrong_card",
-                            "pry",
                             "low_battery",
-                            "power_off",
+#                            "power_off",
                         ],
                     ),
                 ),
@@ -210,7 +209,7 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         icon="mdi:keyboard-outline",
                     ),
                 ),
-                TuyaBLEBatteryMapping(dp_id=8),
+                TuyaBLEBatteryMapping(dp_id=9),
             ],
         }
     ),
