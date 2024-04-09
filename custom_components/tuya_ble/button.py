@@ -108,22 +108,28 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
             ],
         },
     ),
-    "ms": TuyaBLECategoryButtonMapping(
+     "ms": TuyaBLECategoryButtonMapping(
         products={
-            "isljqiq1":  # Smart Lock
-            [
-                TuyaBLEButtonMapping(
-                    dp_id=62, # On click it opens the lock, just like connecting via Smart Life App and holding the center button
-                    description=ButtonEntityDescription(
-                        key="unlock_ble",
-                        icon="mdi:lock-open-variant-outline",
+            **dict.fromkeys(
+                ["isljqiq1"], # Smart Lock
+                [
+                    TuyaBLEButtonMapping(
+                        dp_id=6,
+                        description=ButtonEntityDescription(
+                            key="unlock_ble",
+                        ),
                     ),
-                ),
-            ],
-        },
+                    #TuyaBLEButtonMapping(
+                    #    dp_id=12,
+                    #    description=ButtonEntityDescription(
+                    #        key="unlock_fingerprint",
+                    #    ),
+                    #),
+                ]
+            ),
+        }
     ),
 }
-
 
 def get_mapping_by_device(device: TuyaBLEDevice) -> list[TuyaBLECategoryButtonMapping]:
     category = mapping.get(device.category)
