@@ -168,7 +168,7 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
                     TuyaBLESwitchMapping(
                         dp_id=47,
                         description=SwitchEntityDescription(
-                            key="Status of Smart Lock",
+                            key="lock_motor_state",
                         ),
                     ),
                 ]
