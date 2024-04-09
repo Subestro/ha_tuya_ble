@@ -163,12 +163,12 @@ mapping: dict[str, TuyaBLECategorySwitchMapping] = {
     "ms": TuyaBLECategorySwitchMapping(
         products={
             **dict.fromkeys(
-                ["ludzroix", "isk2p555"], # Smart Lock
+                ["ludzroix", "isk2p555", "isljqiq1"], # Smart Lock
                 [
                     TuyaBLESwitchMapping(
                         dp_id=47,
                         description=SwitchEntityDescription(
-                            key="lock_motor_state",
+                            key="Status of Smart Lock",
                         ),
                     ),
                 ]
