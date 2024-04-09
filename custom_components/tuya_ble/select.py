@@ -85,28 +85,6 @@ mapping: dict[str, TuyaBLECategorySelectMapping] = {
     
     "ms": TuyaBLECategorySelectMapping(
         products={
-            **dict.fromkeys(
-                ["ludzroix", "isk2p555"], # Smart Lock
-                [
-                    TuyaBLESelectMapping(
-                        dp_id=31,
-                        description=SelectEntityDescription(
-                            key="beep_volume",
-                            options=[
-                                "mute",
-                                "low",
-                                "normal",
-                                "high",
-                            ],
-                            entity_category=EntityCategory.CONFIG,
-                        ),
-                    ),
-                ]
-            ),
-        }
-    ),
-    "ms": TuyaBLECategorySelectMapping(
-        products={
             "isljqiq1":  # Your smart lock product ID
             [
                 # Add TuyaBLESelectMapping for remote unlock
