@@ -66,23 +66,6 @@ class TuyaBLECategorySelectMapping:
 
 
 mapping: dict[str, TuyaBLECategorySelectMapping] = {
-    "co2bj": TuyaBLECategorySelectMapping(
-        products={
-            "59s19z5m":  # CO2 Detector
-            [
-                TuyaBLESelectMapping(
-                    dp_id=101,
-                    description=TemperatureUnitDescription(
-                        options=[
-                            UnitOfTemperature.CELSIUS,
-                            UnitOfTemperature.FAHRENHEIT,
-                        ],
-                    )
-                ),
-            ],
-        },
-    ),
-    
     "ms": TuyaBLECategorySelectMapping(
         products={
             "isljqiq1":  # Your smart lock product ID
