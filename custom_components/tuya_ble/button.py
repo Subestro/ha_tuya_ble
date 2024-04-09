@@ -108,14 +108,14 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
             ],
         },
     ),
-    "jtmspro": TuyaBLECategoryButtonMapping(
+    "ms": TuyaBLECategoryButtonMapping(
         products={
-            "kholoaew":  # Nice Digi X1
+            "isljqiq1":  # Smart Lock
             [
                 TuyaBLEButtonMapping(
-                    dp_id=71, # On click it opens the lock, just like connecting via Smart Life App and holding the center button
+                    dp_id=62, # On click it opens the lock, just like connecting via Smart Life App and holding the center button
                     description=ButtonEntityDescription(
-                        key="ble_unlock_check",
+                        key="unlock_ble",
                         icon="mdi:lock-open-variant-outline",
                     ),
                 ),
