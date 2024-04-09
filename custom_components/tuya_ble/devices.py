@@ -195,13 +195,6 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
             ),
         },
     ),
-    "jtmspro": TuyaBLECategoryInfo(
-        products={
-            "kholoaew": TuyaBLEProductInfo(  # device product_id
-                name="Nice Digi X1",
-            ),
-        },
-    ),
     "szjqr": TuyaBLECategoryInfo(
         products={
             "3yqdo5yt": TuyaBLEProductInfo(  # device product_id
@@ -309,7 +302,6 @@ devices_database: dict[str, TuyaBLECategoryInfo] = {
         },
     ),
 }
-
 
 def get_product_info_by_ids(
     category: str, product_id: str
