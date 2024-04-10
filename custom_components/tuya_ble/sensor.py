@@ -169,13 +169,13 @@ mapping: dict[str, TuyaBLECategorySensorMapping] = {
                         icon="mdi:fingerprint",
                     ),
                 ),
-                TuyaBLESensorMapping(
-                    dp_id=15, # Retrieve last card used
-                    description=SensorEntityDescription(
-                        key="unlock_card",
-                        icon="mdi:nfc-variant",
-                    ),
-                ),
+#                TuyaBLESensorMapping(
+#                    dp_id=15, # Retrieve last card used
+#                    description=SensorEntityDescription(
+#                        key="unlock_card",
+#                        icon="mdi:nfc-variant",
+#                    ),
+#                ),
                 TuyaBLESensorMapping(
                     dp_id=13, # Retrieve last code used
                     description=SensorEntityDescription(
