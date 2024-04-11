@@ -1,3 +1,8 @@
+
+Fork added Devices:
+- Smart Lock (isljqiq1) *unlock*
+
+
 # Home Assistant support for Tuya BLE devices
 
 ## Overview
