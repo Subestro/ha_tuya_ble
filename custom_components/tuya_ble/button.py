@@ -119,24 +119,6 @@ mapping: dict[str, TuyaBLECategoryButtonMapping] = {
                             key="unlock_ble",
                         ),
                     ),
-                    TuyaBLEButtonMapping(
-                        dp_id=51,
-                        description=ButtonEntityDescription(
-                            key="temporary_password_creat",
-                        ),
-                    ),
-                    TuyaBLEButtonMapping(
-                        dp_id=52,
-                        description=ButtonEntityDescription(
-                            key="temporary_password_delete",
-                        ),
-                    ),
-                    TuyaBLEButtonMapping(
-                        dp_id=53,
-                        description=ButtonEntityDescription(
-                            key="temporary_password_modify",
-                        ),
-                    ),
                     #TuyaBLEButtonMapping(
                     #    dp_id=12,
                     #    description=ButtonEntityDescription(
